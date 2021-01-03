@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="1dp"
+    app:cardElevation="3dp"
+    app:contentPadding="5dp"
+    >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/productIcon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_store" />
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:layout_toRightOf="@+id/productIcon"
+            >
+            <TextView
+
+                android:padding="4dp"
+                android:textColor="@color/purple_700"
+                android:id="@+id/discountNoteTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/discount_note_shape"
+                android:text="10% off"
+                />
+
+            <TextView
+
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="@color/black"
+                android:id="@+id/titleTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                />
+            <TextView
+
+                android:textColor="#555555"
+                android:id="@+id/quantityTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="quantity"
+                />
+
+
+        </LinearLayout>
+
+
+
+        <ImageButton
+            android:id="@+id/nextBtn"
+            android:layout_marginRight="10dp"
+            android:background="@null"
+            android:src="@drawable/ic_next_arow"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_gravity="right"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        android:layout_width="100dp"
+        android:layout_height="match_parent">
+        <TextView
+
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10$"
+            android:id="@+id/discountedPrice"
+            android:textColor="@color/black"
+            android:textSize="15dp"></TextView>
+        <TextView
+
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10$"
+            android:id="@+id/originalPrice"
+            android:textColor="@color/black"
+            android:textSize="15dp"></TextView>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
