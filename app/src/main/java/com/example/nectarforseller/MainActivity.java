@@ -26,7 +26,7 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
     private TextView nameTv;
-    private ImageButton logoutBtn;
+    private ImageButton logoutBtn,addProductBtn;
 
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         nameTv = (TextView) findViewById(R.id.nameTv);
         logoutBtn = (ImageButton) findViewById(R.id.logoutBtn);
+        addProductBtn = (ImageButton) findViewById(R.id.addProductBtn);
 
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
@@ -50,6 +51,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 makeMeOffline();
 
+            }
+        });
+
+        addProductBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,AddProductActivity.class));
             }
         });
     }

@@ -23,6 +23,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.jaeger.library.StatusBarUtil;
 
 import java.util.HashMap;
 
@@ -39,6 +40,7 @@ public class LoginSellerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_seller);
+        StatusBarUtil.setTransparent(this);
 
         signUpTV = findViewById(R.id.signUpTV);
         forgotPasswordTV = findViewById(R.id.forgotPasswordTV);

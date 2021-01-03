@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+
+    >
 <!--    F2F3F2, 100%-->
 
     <!--    Toolbar-->
@@ -28,13 +30,26 @@
             android:textStyle="bold" />
 
         <ImageButton
+            android:id="@+id/addProductBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+
+            android:layout_marginRight="50dp"
+            android:layout_toEndOf="@+id/nameTv"
+            android:layout_toRightOf="@+id/nameTv"
+            android:background="@null"
+            android:src="@drawable/ic_baseline_add_shopping_cart_24"
+            android:tint="@color/purple_700" />
+
+        <ImageButton
             android:tint="@color/purple_700"
             android:id="@+id/logoutBtn"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_alignParentRight="true"
             android:background="@null"
-
             android:src="@drawable/ic_baseline_power_settings_new_24" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
