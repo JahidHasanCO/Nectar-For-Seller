@@ -20,26 +20,55 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+
+            app:c_border_color="@color/purple_700"
+            app:c_border_width="1dp"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/profileCiv"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_baseline_person_24"
+            />
+
         <TextView
+            android:layout_marginLeft="10dp"
             android:id="@+id/nameTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
+            android:layout_toRightOf="@id/profileCiv"
             android:text="Name"
             android:textColor="@color/purple_700"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            />
+
+        <TextView
+            android:id="@+id/shopNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameTv"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/profileCiv"
+            android:text="Name"
+            android:textColor="@color/purple_700"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/addressTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shopNameTv"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/profileCiv"
+            android:text="Name"
+            android:textColor="@color/purple_700"
+            android:textSize="15sp" />
 
         <ImageButton
             android:id="@+id/addProductBtn"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-
-            android:layout_marginRight="50dp"
-            android:layout_toEndOf="@+id/nameTv"
-            android:layout_toRightOf="@+id/nameTv"
+            android:layout_toLeftOf="@id/logoutBtn"
             android:background="@null"
             android:src="@drawable/ic_baseline_add_shopping_cart_24"
             android:tint="@color/purple_700" />
@@ -58,7 +87,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_below="@id/nameTv"
+            android:layout_below="@id/profileCiv"
             android:layout_marginTop="10dp"
             android:background="@drawable/tab_shape_rec1"
             android:orientation="horizontal">
@@ -97,7 +126,7 @@
         <EditText
             android:id="@+id/searchProduct"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="44dp"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="20dp"
             android:background="@drawable/edittext_shape2"
@@ -121,6 +150,7 @@
             android:src="@drawable/ic_baseline_dashboard_24"
             />
         <TextView
+            android:layout_marginTop="5dp"
             android:layout_marginLeft="20dp"
             android:layout_below="@id/filterProductsBtn"
             android:id="@+id/filteredProductsTv"

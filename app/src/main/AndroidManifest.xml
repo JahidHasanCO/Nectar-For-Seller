@@ -16,10 +16,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NectarForSeller">
-        <activity android:name=".AddProductActivity"></activity>
-        <activity android:name=".AddShopDetailsActivity"></activity>
+        <activity android:name=".editProductActivity"></activity>
+        <activity android:name=".SellerProfileActivity" />
+        <activity android:name=".AddProductActivity" />
+        <activity android:name=".AddShopDetailsActivity" />
         <activity android:name=".UploadAvaterActivity" />
-        <activity android:name=".RegisterSellerActivity"></activity>
+        <activity android:name=".RegisterSellerActivity" />
         <activity android:name=".LoginSellerActivity" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>

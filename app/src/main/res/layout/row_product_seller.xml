@@ -43,7 +43,7 @@
 
             <TextView
 
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 android:layout_marginTop="3dp"
                 android:layout_marginBottom="3dp"
@@ -91,7 +91,7 @@
         android:layout_height="match_parent">
         <TextView
 
-            android:textStyle="bold"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10$"
@@ -100,7 +100,7 @@
             android:textSize="15dp"></TextView>
         <TextView
 
-            android:textStyle="bold"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10$"

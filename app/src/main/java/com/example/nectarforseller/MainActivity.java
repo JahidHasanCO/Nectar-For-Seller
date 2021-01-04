@@ -19,6 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.blogspot.atifsoftwares.circularimageview.CircularImageView;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,16 +30,20 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.jaeger.library.StatusBarUtil;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView nameTv,tabProductsTv,tabOrdersTv,filteredProductsTv;
+    private TextView nameTv,tabProductsTv,tabOrdersTv,filteredProductsTv,addressTv,shopNameTv;
     private ImageButton logoutBtn,addProductBtn,filterProductsBtn;
     private RelativeLayout productsRl,ordersRl;
     private EditText searchProduct;
     private RecyclerView productRv;
+
+    private CircularImageView profileCiv;
+
 
     private String SHOP_UID;
 
@@ -65,6 +70,11 @@ public class MainActivity extends AppCompatActivity {
         filterProductsBtn = findViewById(R.id.filterProductsBtn);
         filteredProductsTv = findViewById(R.id.filteredProductsTv);
         productRv = findViewById(R.id.productRv);
+        profileCiv = findViewById(R.id.profileCiv);
+        shopNameTv = findViewById(R.id.shopNameTv);
+        addressTv = findViewById(R.id.addressTv);
+
+
 
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
@@ -146,6 +156,14 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 }).show();
+            }
+        });
+
+        profileCiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,SellerProfileActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -269,9 +287,21 @@ public class MainActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         for (DataSnapshot ds: snapshot.getChildren()){
                             String name = ""+ds.child("name").getValue();
+                            String shopName = ""+ds.child("shopName").getValue();
+                            String city = ""+ds.child("city").getValue();
+                            String country = ""+ds.child("country").getValue();
+                            String imageUri = ""+ds.child("profileImage").getValue();
                             String accountType = ""+ds.child("accountType").getValue();
 
-                            nameTv.setText(name +"("+accountType+")");
+                            shopNameTv.setText(shopName);
+                            nameTv.setText(name);
+                            addressTv.setText(city+", "+country);
+
+                            try {
+                                Picasso.get().load(imageUri).placeholder(R.drawable.ic_baseline_person_24).into(profileCiv);
+                            } catch (Exception e){
+                                profileCiv.setImageResource(R.drawable.ic_baseline_person_24);
+                            }
                         }
                     }
 

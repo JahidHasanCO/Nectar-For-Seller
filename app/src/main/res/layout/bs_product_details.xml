@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+<!--    -->
+
+    <RelativeLayout
+        android:id="@+id/toolBarRl"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="@drawable/shape_rac2"
+        android:padding="10dp">
+        
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@null"
+            android:src="@drawable/ic_back"
+            />
+        <ImageButton
+            android:id="@+id/deleteBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@null"
+            android:src="@drawable/ic_baseline_delete_24"
+            android:layout_alignParentRight="true"/>
+        <ImageButton
+            android:id="@+id/editBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@null"
+            android:src="@drawable/ic_baseline_edit_24"
+            android:layout_toLeftOf="@id/deleteBtn"/>
+
+        <TextView
+           android:textSize="13sp"
+            android:textColor="@color/purple_700"
+            android:id="@+id/productNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"
+            android:text="product Name"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profileCV"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        app:cardCornerRadius="20dp"
+        android:padding="5dp"
+        app:contentPadding="5dp"
+        >
+        <ImageView
+            android:id="@+id/profileIconTv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_store"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profileCV"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/discountNoteTv"
+            android:background="@drawable/discount_note_shape"
+            android:padding="5dp"
+            android:textSize="10sp"
+            android:text="10% off"
+            android:paddingEnd="5dp"
+            android:textColor="@color/purple_700"
+            android:paddingRight="5dp" />
+
+        <TextView
+            android:id="@+id/titleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"
+            android:text="The Product Title"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/descriptionTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"
+            android:text="The Product Description"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/categoryTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"
+            android:text="Category"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:id="@+id/quantityTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"
+            android:text="Quantity"
+            android:textSize="15sp"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/discountedPriceTv"
+                android:text="10$"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_toRightOf="@id/discountedPriceTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/originalPriceTv"
+                android:text="10$"
+                android:textColor="@color/black"/>
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+</RelativeLayout>
