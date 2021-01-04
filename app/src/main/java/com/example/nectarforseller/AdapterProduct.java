@@ -42,6 +42,7 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.HolderPr
         this.filterList = productsList;
     }
 
+
     @NonNull
     @Override
     public HolderProductSeller onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
